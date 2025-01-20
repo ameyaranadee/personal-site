@@ -10,23 +10,24 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-medium tracking-tight">Work 💼</h1>
-      <div>
+      <h1 className="mb-8 text-2xl font-medium tracking-tight">Experience <span role="img" aria-label="briefcase"> 💼</span></h1>
+      <div className="space-y-6">
         {work.map((work, index) => (
-          <Link
-            key={index}
-            href={work.url}
-            className="flex flex-col space-y-1 mb-5 transition-opacity duration-200 hover:opacity-80"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
-              <h2 className="text-black dark:text-white">{work.title}</h2>
-              <p className="text-neutral-600 dark:text-neutral-400 tracking-tight">
-                {work.description}
-              </p>
+          <div key={index} className="space-y-1">
+            <Link
+              href={work.url}
+              className="text-xl font-medium text-blue-600 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {work.title}
+            </Link>
+            <div className="flex justify-between text-sm text-neutral-500 dark:text-neutral-400">
+                <p>{work.period}</p>
+                <p>{work.location}</p>
             </div>
-          </Link>
+            <li className="text-neutral-700 dark:text-neutral-300">{work.description}</li>
+          </div>
         ))}
       </div>
     </section>

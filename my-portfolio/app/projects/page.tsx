@@ -4,29 +4,29 @@ import { projects } from "./project-data";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Nextfolio Projects",
+  description: "My projects",
 };
 
 export default function Projects() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-medium tracking-tight">Projects</h1>
-      <div>
-        {projects.map((project, index) => (
-          <Link
-            key={index}
-            href={project.url}
-            className="flex flex-col space-y-1 mb-5 transition-opacity duration-200 hover:opacity-80"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
-              <h2 className="text-black dark:text-white">{project.title}</h2>
-              <p className="text-neutral-600 dark:text-neutral-400 tracking-tight">
-                {project.description}
-              </p>
-            </div>
-          </Link>
+      <h1 className="mb-8 text-2xl font-medium tracking-tight">Projects 🛠️</h1>
+      <div className="space-y-6">
+        {projects.map((projects, index) => (
+          <div key={index} className="space-y-1">
+            <div className="flex justify-between items-center">
+            <Link
+              href={projects.url}
+              className="text-xl font-semibold text-blue-600 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {projects.title}
+            </Link>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400">{projects.year}</p>
+          </div>
+            <i className="text-neutral-700 dark:text-neutral-300">{projects.description}</i>
+          </div>
         ))}
       </div>
     </section>
