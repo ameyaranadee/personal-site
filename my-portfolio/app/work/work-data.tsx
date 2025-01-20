@@ -15,7 +15,7 @@ export interface Work {
         url: "",
     },
     {
-        title: "ML Research Intern @c-minds, iit-b",
+        title: "ML Research Intern @C-MInDS, IIT-Bombay",
         period: "Jan 2022-July 2022",
         location: "Mumbai, India",
         description: "Worked on an automatic short answer grading (ASAG) system, improving performance by 13% over research benchmarks.",
